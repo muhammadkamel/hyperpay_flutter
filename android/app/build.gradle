@@ -1,0 +1,59 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace 'com.example.hyperpay_flutter'
+    compileSdkVersion 35
+    ndkVersion "27.0.12077973"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    defaultConfig {
+        applicationId "com.example.hyperpay_flutter"
+        minSdkVersion 24
+        targetSdkVersion 36
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.aar"])
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
+    implementation 'androidx.browser:browser:1.8.0'
+    implementation 'androidx.fragment:fragment-ktx:1.8.8'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'androidx.webkit:webkit:1.14.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'com.google.code.gson:gson:2.13.1'
+    implementation 'androidx.databinding:viewbinding:8.11.1'
+}
+
+// dependencies {
+//     implementation fileTree(dir: "libs", include: ["*.aar"])
+//     implementation 'androidx.appcompat:appcompat:1.4.2'
+//     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+//     implementation 'androidx.browser:browser:1.4.0'
+//     implementation 'androidx.fragment:fragment-ktx:1.4.1'
+//     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+//     implementation 'androidx.webkit:webkit:1.4.0'
+//     implementation 'com.google.android.material:material:1.6.1'
+//     implementation 'com.google.code.gson:gson:2.8.9'
+//     implementation 'androidx.databinding:viewbinding:7.1.2'
+// }
+
+flutter {
+    source '../..'
+}
